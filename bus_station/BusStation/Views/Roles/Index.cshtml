@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BusStation.Models.Role>
+@{
+    ViewBag.Title = Resource.roles;
+}
+
+<p>
+    @Html.ActionLink(Resource.create, "Create", new { @class = "alert-link" })
+</p>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.RoleName)
+            </th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+            <td>
+                @Html.ActionLink(Resource.edit, "Edit", new { id = item.RoleId }, new { @class = "alert-link" }) |
+                @Html.ActionLink(Resource.details, "Details", new { id = item.RoleId }, new { @class = "alert-link" }) |
+                @Html.ActionLink(Resource.delete, "Delete", new { id = item.RoleId }, new { @class = "alert-link" })
+            </td>
+        </tr>
+    }
+
+</table>

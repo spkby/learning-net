@@ -1,0 +1,22 @@
+﻿@model BusStation.Models.Role
+@{
+    ViewBag.Title = @Resource.role + " / " + @Resource.details;
+}
+
+
+<div>
+    <h4>Role</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <!---<dt>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </dt>-->
+        <dd class="alert alert-dark" role="alert">
+            @Html.DisplayFor(model => model.RoleName)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(@Resource.edit, "Edit", new { id = Model.RoleId }) |
+    @Html.ActionLink(@Resource.backtolist, "Index")
+</p>

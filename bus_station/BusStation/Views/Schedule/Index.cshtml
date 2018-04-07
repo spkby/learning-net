@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BusStation.Models.Ride>
+
+@{
+    ViewBag.Title = Resource.schedule;
+}
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.BusNumber)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.RouteCityFrom)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.RouteCityTo)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.FreeSeats)
+            </th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RouteCityFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RouteCityTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FreeSeats)
+        </td>
+    </tr>
+    }
+
+</table>

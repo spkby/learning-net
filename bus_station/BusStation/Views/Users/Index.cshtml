@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BusStation.Models.User>
+
+@{
+    ViewBag.Title = Resource.users;
+}
+
+<p>
+    @Html.ActionLink(Resource.create, "Create", new { @class = "alert-link" })
+</p>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Role.RoleName)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role.RoleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink(Resource.edit, "Edit", new { id = item.UserID }, new { @class = "alert-link" }) |
+                @Html.ActionLink(Resource.details, "Details", new { id = item.UserID }, new { @class = "alert-link" }) |
+                @Html.ActionLink(Resource.delete, "Delete", new { id = item.UserID }, new { @class = "alert-link" })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,48 @@
+﻿@model BusStation.Models.User
+
+@{
+    ViewBag.Title = @Resource.user + " / " + @Resource.details;
+}
+
+<div>
+    <!-- <h4>Details User</h4> -->
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Role.RoleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role.RoleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(@Resource.edit, "Edit", new { id = Model.UserID }) |
+    @Html.ActionLink(@Resource.backtolist, "Index")
+</p>

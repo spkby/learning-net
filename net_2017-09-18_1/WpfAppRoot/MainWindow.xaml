@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfAppRoot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppRoot"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="236.592" Width="230.726">
+    <Grid Initialized="Grid_Initialized" Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="126*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="textNumber" HorizontalAlignment="Left" Height="23" Margin="92,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="num" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="textPow" HorizontalAlignment="Left" Height="23" Margin="92,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="pow" RenderTransformOrigin="0.487,-0.963" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="textAcc" HorizontalAlignment="Left" Height="23" Margin="92,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="acc" Grid.ColumnSpan="2"/>
+        <Label Content="Number" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="5.64,2.042"/>
+        <Label Content="Pow" HorizontalAlignment="Left" Margin="21,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="Accuracy" HorizontalAlignment="Left" Margin="21,79,0,0" VerticalAlignment="Top"/>
+        <Label Content="Root" HorizontalAlignment="Left" Margin="35,149,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelRslt" Content="Label" HorizontalAlignment="Left" Margin="92,149,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="53"/>
+        <Label Content="Chk" HorizontalAlignment="Left" Margin="35,174,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelChk" Content="Label" HorizontalAlignment="Left" Margin="92,174,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="53"/>
+        <Button Content="Calc" HorizontalAlignment="Left" Margin="42.257,117,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Column="1"/>
+
+    </Grid>
+</Window>

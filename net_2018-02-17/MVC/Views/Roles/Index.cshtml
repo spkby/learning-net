@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MVC.Models.Role>
+@{
+    ViewBag.Title = "Roles";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { @class = "alert-link" })
+</p>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                name @Html.DisplayNameFor(model => model.roleName)
+            </th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.roleName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.RoleId }, new { @class = "alert-link" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.RoleId }, new { @class = "alert-link" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.RoleId }, new { @class = "alert-link" })
+            </td>
+        </tr>
+    }
+
+</table>

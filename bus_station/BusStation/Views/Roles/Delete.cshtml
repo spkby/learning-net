@@ -1,0 +1,32 @@
+﻿@model BusStation.Models.Role
+
+@{
+    ViewBag.Title = Resource.role+ " / " + Resource.delete;
+}
+
+<h3>@Resource.areyousuretodelete</h3>
+<div>
+    <!----<h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </dt>-->
+    <dl class="dl-horizontal">
+
+        <dd class="alert alert-danger" role="alert">
+            @Html.DisplayFor(model => model.RoleName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="@Resource.delete" class="btn btn-danger" /> |
+            @Html.ActionLink(@Resource.backtolist, "Index")
+        </div>
+    }
+</div>

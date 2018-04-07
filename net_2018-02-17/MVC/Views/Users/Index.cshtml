@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MVC.Models.User>
+
+@{
+    ViewBag.Title = "Users";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { @class = "alert-link" })
+</p>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.RoleId)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.UserID }, new { @class = "alert-link" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.UserID }, new { @class = "alert-link" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.UserID }, new { @class = "alert-link" })
+            </td>
+        </tr>
+    }
+
+</table>

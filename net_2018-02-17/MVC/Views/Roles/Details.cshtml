@@ -1,0 +1,22 @@
+﻿@model MVC.Models.Role
+@{
+    ViewBag.Title = "Details Role";
+}
+
+
+<div>
+    <h4>Role</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <!---<dt>
+            @Html.DisplayNameFor(model => model.roleName)
+        </dt>-->
+        <dd class="alert alert-dark" role="alert">
+            @Html.DisplayFor(model => model.roleName)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RoleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
